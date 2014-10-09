@@ -1,0 +1,7 @@
+Catalan
+
+Cn = n parenthesis permutations.
+Cn = the way to divide the way of (n+1) multiplications.
+Cn = the number of binary trees with (n+1) leaves.
+Cn = go from (0, 0) to (n-1, n-1) without crossing the diagonal.
+Cn = 2n people shaking hands on a round-table without crossing!
