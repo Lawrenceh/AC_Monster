@@ -20,19 +20,18 @@ void preorder(TreeNode *node) {
 
 void inorder(TreeNode *node) {
     stack<TreeNode *> s;
-    TreeNode *cur;
-    while (!s.empty() || cur != NULL) {
-        if (cur != NULL) {
-            s.push(cur);
-            cur = cur -> left;
+    while (!s.empty() || node != NULL) {
+        if (node != NULL) { // travese to the left child
+            s.push(node);
+            node = node->left;
         } else {
-            visit(s.pop());
-            cur = cur -> right;
+            node = s.pop();
+            visit(node);
+            node = node -> right;
         }
     }
 }
 
-// postorder with two stacks
 void postorder(TreeNode *node) {
     stack<TreeNode *> s1, s2;
     s1.push(node);
