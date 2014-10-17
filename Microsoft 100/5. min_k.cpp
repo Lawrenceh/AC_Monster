@@ -47,7 +47,7 @@ void qselect(int *a, int left, int right, int k) {
     if (left < right) {
         i = partition(a, left, right);
         if (i + 1 <= k) qselect(a, i + 1, right, k);
-        else quickselect(a, left, i - 1, k);
+        else qselect(a, left, i - 1, k);
     }
 }
 
