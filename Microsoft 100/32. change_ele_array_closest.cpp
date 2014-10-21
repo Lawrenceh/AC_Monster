@@ -16,7 +16,6 @@ bool Swap2Balance(int *pa, int *pb, int n)
 			for (int j=0;j<n;j++)
 			{
 				int change=(pa[i]-pb[j]);
-				//?????(suma-pa[i]+pb[j])-(sumb+pa[i]-pb[j])=diff-2*change
 				if (abs(diff-2*change)<abs(diff-2*bestchange))
 				{
 					bestchange=change;
