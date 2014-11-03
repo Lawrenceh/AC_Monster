@@ -1,6 +1,7 @@
 AC_Monster
 ==========
 Alogrithms & Data Structures & Design Patterns.
-- inversions
+- selection
 - kmp & bm
 - trees
+- dp
