@@ -45,7 +45,7 @@ void DijkstraPath(MGraph g,int *dist,int *path,int v0) {
                 dist[k]=min+g.matrix[u][k];
                 path[k]=u; 
             }
-        }        
+        }
     }    
 }
 
