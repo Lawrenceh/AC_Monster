@@ -66,6 +66,21 @@ result = test and true_result or false_result
 out = lambda *x: " ".join(map(str, x))
 out(3, 4, "test", 2)
 
+items = [1, 2, 3, 4, 5]
+list(map((lambda x: x **2), items))
+
+# While we still use lamda as a aFunction, we can have a list of functions as aSequence
+def square(x):
+        return (x**2)
+def cube(x):
+        return (x**3)
+
+funcs = [square, cube]
+for r in range(5):
+    value = map(lambda x: x(r), funcs)
+    print value
+
+
 # swap elements in a list
 def swap(a, x, y):
     a[x] = (a[x], a[y])
@@ -80,6 +95,39 @@ print "Spam" + " eggs" + " and" + " spam"               # DON'T DO THIS
 print " ".join(["Spam","eggs","and","spam"])            # Much faster/more
 print "%s %s %s %s" % ("Spam", "eggs", "and", "spam")   # Also a pythonic way of
                                                         # doing it - very fast
+# FETCHING EVERY OTHER ITEM IN THE LIST
+l2 = l[::2]
+
+# PRINT A LIST OF FILE IN A DIRECTORY
+import os
+
+def file_list(dir):
+    basedir = dir
+    subdir_list = []
+    for item in os.listdir(dir):
+        fullpath = os.path.join(basedir,item)
+        if os.path.isdir(fullpath):
+            subdir_list.append(fullpath)
+        else:
+            print fullpath
+
+    for d in subdir_list:
+        file_list(d)
+
+file_list('/dir')
+
+# use MAP & string.count
+sentence='The Mississippi River'
+
+def count_chars(s):
+        s=s.lower()
+        count=list(map(s.count,s))
+        return (max(count))
+
+print count_chars(sentence)
+
+# reverse a string
+s[::-1]
 
 
 
