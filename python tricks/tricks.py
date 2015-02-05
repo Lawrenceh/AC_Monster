@@ -129,5 +129,83 @@ print count_chars(sentence)
 # reverse a string
 s[::-1]
 
+# recursively
+def reverse(input):
+    print input
+    if len(input) <= 1:
+	    return input
+	
+    return reverse(input[1:]) + input[0]
+
+s = 'reverse'	
+print(reverse(s))
+
+# iteratively
+def reverse(input):
+    return ''.join([input[i] for i in range(len(input)-1, -1, -1)])
+	
+s = 'reverse'	
+print(reverse(s))
+
+
+# Function argument unpacking
+def draw_point(x, y):
+    # do some magic
+
+point_foo = (3, 4)
+point_bar = {'y': 3, 'x': 2}
+
+draw_point(*point_foo)
+draw_point(**point_bar)
+
+# decorators
+def decorator(F):
+    def new_F(a, b):
+        print("input", a, b)
+        return F(a, b)
+    return new_F
+
+# get square sum
+@decorator
+def square_sum(a, b):
+    return a**2 + b**2
+
+# get square diff
+@decorator
+def square_diff(a, b):
+    return a**2 - b**2
+
+print(square_sum(3, 4))
+print(square_diff(3, 4))
+
+
+# decorators with arguments
+# a new wrapper layer
+def pre_str(pre=''):
+    # old decorator
+    def decorator(F):
+        def new_F(a, b):
+            print(pre + "input", a, b)
+            return F(a, b)
+        return new_F
+    return decorator
+
+# get square sum
+@pre_str('^_^')
+def square_sum(a, b):
+    return a**2 + b**2
+
+# get square diff
+@pre_str('T_T')
+def square_diff(a, b):
+    return a**2 - b**2
+
+print(square_sum(3, 4))
+print(square_diff(3, 4))
+
+# the zen of python
+import this
+
+
 
 
