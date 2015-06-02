@@ -1,0 +1,36 @@
+What is C++?
+================================
+#include <iostream>
+using namespace std;
+
+int main() {
+    char a[] = "abcd";
+    a[0] = 'A';
+    cout << a << endl;
+
+    char *b = "1234";
+    b[0] = '0';
+    cout << b << endl;
+
+    //array cpy
+    char a[] = "hello";
+    char b[10];
+    b = a; 
+    strcpy(b, a);
+    // pointer cpy
+    int len = strlen(a);
+    char *p = (char *)malloc(sizeof(char) * len);
+    p = a;
+    strcpy(p, a);
+
+    // sizeof
+    char a[] = "hello world";
+    char *p = a;
+    cout << sizeof(a) << endl;
+    cout << sizeof(p) << endl;
+    void f(char a[]) {
+        cout << sizeof(a) << endl;
+    }
+
+    return 0;
+}
