@@ -1,0 +1,6 @@
+1. Only one duplicate in n numbers ranging from [0, n - 1]. Find it out:
+    - hash table
+    - swapping method
+    - negative marking
+2. A series of numbers in which, only one number appears only once, all others appear 3 times. Find that single number out:
+    - bit representation sum by bits % 3
