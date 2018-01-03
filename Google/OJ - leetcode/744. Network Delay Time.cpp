@@ -1,5 +1,12 @@
 /* dijkstra */
 
+/* NOTE: Dijkstra needs additional DECREASE-KEY implementation, below code is using a HACK which is not correct strictly speaking */
+
+/* Example
+ * [[1,2,5],[1,3,10],[2,4,2], [2,3,3]], 4, 1 
+ * Above input would yield 5 pushes into the queue, while there are in total only 4 nodes.
+ */
+
 class mycomparison {
 public:
     bool operator() (const pair<int, int> &lhs, const pair<int, int> &rhs) const {
@@ -35,6 +42,7 @@ public:
                 if (cw + w < d[v]) {
                     d[v] = cw + w;
                     hp.push(make_pair(v, d[v])); // Alternatively we choose to push this into the priority queue dynamically!
+                    /* UPDATE: this is incorrect strictly speaking! We would push duplicate nodes with different key values into the queue. The right way is to 1) implement a decrease-key operation or 2) use set */
                 }
             }
         }
