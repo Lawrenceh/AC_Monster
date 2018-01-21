@@ -1,0 +1,8 @@
+1. generating rand7 by rand5:
+    - matrix method
+    - generate 7 numbers from [1, 5] and find the max repeatedly, of which the index is the generated value
+
+2. tail recursion optimization:
+    - Because immediately return after the tail call, we can discard the previous stackframe before invoking the function in tail position, or, in case of recursive functions, reuse the stackframe as-is
+    - a sufficiently advanced optimizer can replace tail-recursion with iteration, which is far more efficient as you avoid function call overhead and only use a constant amount of stack space
+

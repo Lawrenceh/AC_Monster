@@ -1,3 +1,12 @@
+/* mergesort vs quicksort */
+- quicksort is in-place, mergesort needs O(N) auxilliary space
+- quicksort has good locality of reference, which is extremely important when secondary memory comes into play (sorting files)
+- quicksort has tail recursion, which could be optimized by optimizer
+- mergesort works perfectly when we deal with linked list, because memory allocation is not continuous
+- mergesort avoids the need for random index access used in quicksort when we deal with linked list
+- mergesort is stable
+- mergesort is a must when RAM is not big enough for all intermediate results
+
 #include <iostream>
 #include <cstdlib>
 #include <cstdio>
