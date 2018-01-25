@@ -19,7 +19,7 @@ using namespace std;
 // The only significant advantage that bubble sort has over most other implementations, even quicksort, but not insertion sort, is that the ability to detect that the list is sorted efficiently is built into the algorithm. When the list is already sorted (best-case), the complexity of bubble sort is only O(n). By contrast, most other algorithms, even those with better average-case complexity, perform their entire sorting process on the set and thus are more complex. However, not only does insertion sort have this mechanism too, but it also performs better on a list that is substantially sorted (having a small number of inversions).
 void BubbleSort(int a[], int n) {
     // swapped is added for O(n) best case
-    bool swapped = false;
+    bool swapped = true;
     for (int i = 0; i < n; i ++) {
         if (!swapped) return;
         for (int j = n - 1; j > i; j --) {
@@ -128,7 +128,7 @@ void QuickSort(int a[], int l, int r) {
 }
 
 
-void heapify(int a[], int k, int n) {
+void heapify(int a[], int k, int n) { // heapify assumes all below sub-structure is already heapified
     int left = k * 2 + 1;
     int right = k * 2 + 2;
     int largest = k;
@@ -172,8 +172,7 @@ void CountingSort(int a[], int n) {
         c[i] = c[i] + c[i - 1];
     }
     for (int i = n - 1; i >= 0; i --) {
-        b[c[a[i]]] = a[i];
-        c[a[i]] --;
+        b[--c[a[i]]] = a[i];
     }
     // copy results
     for (int i = 0; i < n; i ++) {

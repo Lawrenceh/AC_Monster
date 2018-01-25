@@ -32,7 +32,7 @@ public:
             return kthSmallest(root->left, k);
         } else if (n < k - 1) {
             return kthSmallest(root->right, k - n - 1);
-        } else { // n == k + 1
+        } else { // n == k - 1
             return root->val;
         }
     }
